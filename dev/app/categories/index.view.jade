@@ -1,0 +1,43 @@
+// Content Header (Page header)
+section.content-header
+	h1 Список разделов
+	//	small Полный список определений и терминов
+	ol.breadcrumb
+		li
+			a(href='#')
+				i.fa.fa-dashboard
+				|  Термины
+		li.active Добавить раздел
+// Main content
+section.content 
+	div.box.box-primary
+		div.box-header.with-border 
+			div
+				a.btn.btn-primary(href="#/categories/add") Добавить
+		form
+			div.box-body
+				table.table.table-bordered
+					thead
+						tr
+							th(style="width: 20px;") #
+							th(style="width: 20%;") Название
+							th Описание
+							th(style="width: 135px;") Редактировать 
+					tbody
+						tr(ng-repeat="(key, item) in vm.list")
+							td {{key+1}}
+							td {{item.name}}
+							td {{item.info|htmlToPlaintext|limitTo:300}}
+							td(align="center")
+								div.btn-group
+									//a.btn.btn-primary(title="Edit" ng-click="vm.Edit(key)")
+									//	i.fa.fa-eye
+									a.btn.btn-primary(title="Edit" href="#/categories/{{key}}/edit")
+										i.fa.fa-edit
+									a.btn.btn-primary(title="Edit" ng-click="vm.Delete(key)")
+										i.fa.fa-trash
+							
+
+
+	// Your Page Content Here
+	// /.content

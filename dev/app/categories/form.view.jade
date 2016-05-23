@@ -1,0 +1,30 @@
+// Content Header (Page header)
+section.content-header
+	h1
+		| {{ vm.title }} раздел
+	//	small Полный список определений и терминов
+	ol.breadcrumb
+		li
+			a(href='#')
+				i.fa.fa-dashboard
+				|  Термины
+		li.active Добавить раздел
+// Main content
+section.content 
+	
+	div.box.box-primary
+		div.box-header.with-border 
+			div
+				a.btn.btn-primary(href="#/categories") Список разделов
+		form
+
+			div.box-body
+				flash-message
+				div.form-group
+					label(for="name") Название
+					input.form-control(type="text" id="name" placeholder="Название" ng-model="vm.name")
+				div.form-group
+					label(for="ingo") Описание
+					textarea.textarea(ng-model="vm.info" id='info' placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;")
+			div.box-footer
+				button.btn.btn-primary(type="submit" ng-click="vm.Save()") Сохранить

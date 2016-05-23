@@ -1,0 +1,30 @@
+div
+  .login-box
+    .login-logo
+      a(href='#')
+        b Авторизация
+    // /.login-logo
+    .login-box-body
+      p.login-box-msg Авторизуйтесь для начала работы
+      form(ng-submit="vm.Login()" ng-init="vm.Init()")
+        .form-group.has-feedback
+          input.form-control(type='email', placeholder='Email' ng-model="login" required)
+          span.glyphicon.glyphicon-envelope.form-control-feedback
+        .form-group.has-feedback
+          input.form-control(type='password', placeholder='Password' ng-model="password" required)
+          span.glyphicon.glyphicon-lock.form-control-feedback
+        .row
+          .col-xs-4
+            button.btn.btn-primary.btn-block.btn-flat(type='submit') Sign In
+          // /.col
+      
+    // /.login-box-body
+  // /.login-box
+  //script(src='./assets/admin-lte/plugins/jQuery/jQuery-2.2.0.min.js')
+  // jQuery UI 1.11.4
+  //script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.min.js')
+  // Resolve conflict in jQuery UI tooltip with Bootstrap tooltip
+  //script.
+   //   $.widget.bridge('uibutton', $.ui.button);
+  // Bootstrap 3.3.6
+  //script(src='./assets/admin-lte/bootstrap/js/bootstrap.min.js')

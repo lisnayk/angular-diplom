@@ -1,0 +1,47 @@
+
+<!-- Content Header (Page header)-->
+<section class="content-header">
+  <h1>Список разделов</h1>
+  <!--	small Полный список определений и терминов-->
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Термины</a></li>
+    <li class="active">Добавить раздел</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content"> 
+  <div class="box box-primary">
+    <div class="box-header with-border"> 
+      <div><a href="#/categories/add" class="btn btn-primary">Добавить</a></div>
+    </div>
+    <form>
+      <div class="box-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th style="width: 20px;">#</th>
+              <th style="width: 20%;">Название</th>
+              <th>Описание</th>
+              <th style="width: 135px;">Редактировать </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="(key, item) in vm.list">
+              <td>{{key+1}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.info|htmlToPlaintext|limitTo:300}}</td>
+              <td align="center">
+                <div class="btn-group">
+                  <!--a.btn.btn-primary(title="Edit" ng-click="vm.Edit(key)")-->
+                  <!--	i.fa.fa-eye--><a title="Edit" href="#/categories/{{key}}/edit" class="btn btn-primary"><i class="fa fa-edit"></i></a><a title="Edit" ng-click="vm.Delete(key)" class="btn btn-primary"><i class="fa fa-trash"></i></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+  <!-- Your Page Content Here-->
+  <!-- /.content-->
+</section>

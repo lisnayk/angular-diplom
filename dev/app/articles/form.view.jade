@@ -1,0 +1,37 @@
+// Content Header (Page header)
+section.content-header
+	h1
+		| {{ vm.title }} материал
+	//	small Полный список определений и терминов
+	ol.breadcrumb
+		li
+			a(href='#')
+				i.fa.fa-dashboard
+				|  Материалы
+		li.active Добавить материал
+// Main content
+section.content 
+	
+	div.box.box-primary
+		div.box-header.with-border 
+			div
+				a.btn.btn-primary(href="#/articles") Список материалов
+		form
+
+			div.box-body
+				flash-message
+				div.form-group
+					label(for="name") Название
+					input.form-control(type="text" id="name" placeholder="Название" ng-model="vm.name")
+				div.form-group
+					label Категория (раздел)
+					select.form-control( ng-model="vm.category") 
+						option(ng-repeat="(key, item) in vm.Categories" value="{{key}}") {{item.name}}
+				div.form-group
+					label(for="summary") Краткое описание
+					textarea.textarea(ng-model="vm.summary" id='summary' placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;")
+				div.form-group
+					label(for="ingo") Текст материала
+					textarea.textarea(data-ck-editor ng-model="vm.text" id='info' placeholder="Place some text here" style="width: 100%; height: 600px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;")
+			div.box-footer
+				button.btn.btn-primary(type="submit" ng-click="vm.Save()") Сохранить
