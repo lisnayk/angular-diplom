@@ -1,0 +1,20 @@
+
+<!-- Content Header (Page header)-->
+<section class="content-header">
+  <h1>Термины</h1>
+  <!--	small Полный список определений и терминов-->
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Главная</a></li>
+    <li class="active">Термины</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content"> 
+  <div class="box box-primary">
+    <div class="box-header with-border"></div>
+    <dl ng-repeat="(key, item) in vm.list | filter: {name: Main.search}"> 
+      <dt>{{item.name}}</dt>
+      <dd ng-bind-html="item.info | unsafe"></dd>
+    </dl>
+  </div>
+</section>

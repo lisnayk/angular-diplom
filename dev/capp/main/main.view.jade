@@ -1,0 +1,22 @@
+// Content Header (Page header)
+section.content-header
+	h1
+		| Содержание учебника
+		//small Optional description
+	ol.breadcrumb
+		li
+			a(href='#/')
+				i.fa.fa-dashboard
+				|  Главная
+		li.active Содержание учебника
+// Main content
+section.content
+	div.box-body
+		ul
+			li(ng-repeat="(key, item) in vm.categories")
+				h2
+					a(href="#/category/{{key}}") {{item.name}}
+				ul
+					li(ng-repeat="(akey, aitem) in vm.articles | filter: { category : key } | filter: { name: Main.search}")
+						h3
+							a(href="#/article/{{akey}}") {{aitem.name}}

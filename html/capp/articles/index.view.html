@@ -1,0 +1,14 @@
+
+<!-- Content Header (Page header)-->
+<section class="content-header">
+  <h1>{{vm.name}}</h1>
+  <!--	small Полный список определений и терминов-->
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Главная</a></li>
+    <li class="active">{{vm.name}}</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content"> 
+  <div ng-bind-html="vm.text | unsafe">						</div>
+</section>

@@ -17,6 +17,14 @@ gulp.task('jade', [], function() {
             stream: true
         }));
 
+    gulp.src('./capp/**/*.jade')
+        .pipe(g_jade({
+            pretty: true
+        }).on('error', console.error))
+        .pipe(gulp.dest('../html/capp/'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
     gulp.src('./app/**/*.jade')
         .pipe(g_jade({
             pretty: true
@@ -25,6 +33,7 @@ gulp.task('jade', [], function() {
         .pipe(browserSync.reload({
             stream: true
         }));
+
 });
 
 /*gulp.task('scss', [], function() {
@@ -47,6 +56,12 @@ gulp.task('styles', function() {
         }));
 });
 gulp.task('app', function() {
+    gulp.src('./capp/**/*.js')
+        //.pipe(g_scss().on('error', console.log))
+        .pipe(gulp.dest('../html/capp'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
     gulp.src('./app/**/*.js')
         //.pipe(g_scss().on('error', console.log))
         .pipe(gulp.dest('../html/app'))
@@ -54,6 +69,7 @@ gulp.task('app', function() {
             stream: true
         }));
 });
+
 
 gulp.task('js', [], function() {
     gulp.src('./js/*.js')
@@ -76,9 +92,11 @@ gulp.task('images', function(cb) {
 });
 
 gulp.task('watch', [], function() {
+    gulp.watch('./capp/**/*.js', ['app']);
     gulp.watch('./app/**/*.js', ['app']);
     gulp.watch('./scss/**/*.scss', ['styles']);
     gulp.watch('./jade/**/*.jade', ['jade']);
+    gulp.watch('./capp/**/*.jade', ['jade']);
     gulp.watch('./app/**/*.jade', ['jade']);
     gulp.watch('./js/**/*.js', ['js']);
 });

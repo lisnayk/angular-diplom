@@ -1,0 +1,26 @@
+
+<!-- Content Header (Page header)-->
+<section class="content-header">
+  <h1>Содержание учебника
+    <!--small Optional description-->
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#/"><i class="fa fa-dashboard"></i> Главная</a></li>
+    <li class="active">Содержание учебника</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content">
+  <div class="box-body">
+    <ul>
+      <li ng-repeat="(key, item) in vm.categories">
+        <h2><a href="#/category/{{key}}">{{item.name}}</a></h2>
+        <ul>
+          <li ng-repeat="(akey, aitem) in vm.articles | filter: { category : key } | filter: { name: Main.search}">
+            <h3><a href="#/article/{{akey}}">{{aitem.name}}</a></h3>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>

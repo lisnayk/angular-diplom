@@ -1,0 +1,17 @@
+// Content Header (Page header)
+section.content-header
+	h1 Термины
+	//	small Полный список определений и терминов
+	ol.breadcrumb
+		li
+			a(href='#/')
+				i.fa.fa-dashboard
+				|  Главная
+		li.active Термины
+// Main content
+section.content 
+	div.box.box-primary
+		div.box-header.with-border
+		dl(ng-repeat="(key, item) in vm.list | filter: {name: Main.search}") 
+			dt {{item.name}}
+			dd( ng-bind-html="item.info | unsafe")

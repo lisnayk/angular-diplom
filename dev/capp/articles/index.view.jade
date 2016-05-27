@@ -1,0 +1,13 @@
+// Content Header (Page header)
+section.content-header
+	h1 {{vm.name}}
+	//	small Полный список определений и терминов
+	ol.breadcrumb
+		li
+			a(href='#/')
+				i.fa.fa-dashboard
+				|  Главная
+		li.active {{vm.name}}
+// Main content
+section.content 
+	div(ng-bind-html ="vm.text | unsafe")						

@@ -1,0 +1,34 @@
+
+<!-- Content Header (Page header)-->
+<section class="content-header">
+  <h1>{{ vm.title }} термин</h1>
+  <!--	small Полный список определений и терминов-->
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Термины</a></li>
+    <li class="active">Добавить термин</li>
+  </ol>
+</section>
+<!-- Main content-->
+<section class="content"> 
+  <div class="box box-primary">
+    <div class="box-header with-border"> 
+      <div><a href="#/terms" class="btn btn-primary">Список терминов</a></div>
+    </div>
+    <form>
+      <div class="box-body">
+        <flash-message></flash-message>
+        <div class="form-group">
+          <label for="name">Название</label>
+          <input type="text" id="name" placeholder="Название" ng-model="vm.name" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label for="ingo">Описание</label>
+          <textarea data-ck-editor="data-ck-editor" ng-model="vm.info" id="info" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" class="textarea"></textarea>
+        </div>
+      </div>
+      <div class="box-footer">
+        <button type="submit" ng-click="vm.Save()" class="btn btn-primary">Сохранить</button>
+      </div>
+    </form>
+  </div>
+</section>
