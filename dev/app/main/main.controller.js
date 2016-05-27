@@ -1,7 +1,7 @@
 ( function() {
 'use strict';
 
-angular.module('myApp').controller('MainController', ['$scope', '$location', 'CONFIG', '$route', "Auth", function LoginController($scope, $location, CONFIG, $route, Auth) {
+angular.module('myApp').controller('MainController', ['$scope', '$location', 'CONFIG', '$route', "Auth", function MainController($scope, $location, CONFIG, $route, Auth) {
     var vm = this;
     vm.authData;
     vm.auth = Auth;

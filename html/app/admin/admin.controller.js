@@ -1,7 +1,7 @@
 ( function() {
 'use strict';
 
-angular.module('myApp').controller('AdminController', ['$location', 'CONFIG', '$route', "$firebaseObject", function($location, CONFIG, $route, $firebaseObject) {
+angular.module('myApp').controller('AdminController', ['$location', 'CONFIG', '$route', "$firebaseObject", function AdminController($location, CONFIG, $route, $firebaseObject) {
     var vm = this;
     console.log(CONFIG.FiteBaseApp);
     var ref = new Firebase(CONFIG.FiteBaseApp + "/categories");

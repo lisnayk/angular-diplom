@@ -1,7 +1,7 @@
 ( function() {
 'use strict';
 
-angular.module('myApp').controller('ArticlesController', ["Articles", "Categories", "$routeParams", "Flash", function LoginController(Articles, Categories, $routeParams, Flash) {
+angular.module('myApp').controller('ArticlesController', ["Articles", "Categories", "$routeParams", "Flash", function ArticlesController(Articles, Categories, $routeParams, Flash) {
     var vm = this;
     var id = $routeParams.id;
     var newRecord = true;
